@@ -1,0 +1,111 @@
+import discord
+import random
+from discord.ext import commands
+import sys
+import asyncio
+client = discord.Client()
+
+@client.event
+async def on_ready():
+   print("String bot is ready!")
+   print(client.user.name)
+   print(client.user.id)
+   print("yoyostring's ID for discord")
+   await client.change_presence(activity=discord.Game(name="+help from best waifu"))
+
+@client.event
+async def on_message(message):
+   if message.author == client.user:
+       return
+   if message.content == "+smiley":
+       await message.channel.send(":D")
+   if message.content == "+peepeesize":
+       foo = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "c==8"]
+       await message.channel.send(random.choice(foo))
+   if message.content == "+ppsize":
+       foo = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "c==8"]
+       await message.channel.send(random.choice(foo))
+   if message.content == "+pp":
+       foo = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "c==8"]
+       await message.channel.send(random.choice(foo))
+   if message.content == "+peepee":
+       foo = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "c==8"]
+       await message.channel.send(random.choice(foo))
+   if message.content == "+devinfo":
+       await message.channel.send("Hi this bot is created by yoyostring. This is just for fun and eventually more and more commands will be brought such as math, random chance, maybe even currency. This is because yoyo's waifus are godlike")
+   if message.content == "+developerinfo":
+       await message.channel.send("Hi this bot is created by yoyostring. This is just for fun and eventually more and more commands will be brought such as math, random chance, maybe even currency. This is because yoyo's waifus are godlike")
+   if message.content == "+bestjokeever":
+       await message.channel.send("Always your mom")
+   if message.content == "+help":
+       await message.channel.send("This bot is created by yoyostring, "
+"below are the categories of commands you can run. \n"
+"Prefix (+) \n"
+
+"`Chance and fun commands: 8ball, smiley, bestjokeever, peepee, \n"
+                                 
+"Useful commands: math, absvalue,     \n"
+                                 
+"Informational commands: devinfo, serversize, avatar`")
+   if message.content =="+roll":
+       foo = ["You rolled a 1 :game_die:", "You rolled a 2 :game_die: ", "You rolled a 3 :game_die: ", "You rolled a 4 :game_die: ", "You rolled a 5 :game_die: ", "You rolled a 6 :game_die: "]
+       await message.channel.send(random.choice(foo))
+   elif message.content.startswith("+8ball"):
+       foo = [":8ball: It is likely", ":8ball: 100%", ":8ball: Ask later lemme think", ":8ball: Give me time to meditate", ":8ball: It's unlikely", ":8ball: Yes", ":8ball: Never ever in a million years", "Well yes, but actually **no**", ":8ball: **dies from too many questions asked at once**"]
+       await message.channel.send(random.choice(foo))
+   if message.content.startswith('+math'):
+       msg = message.content.split()
+       expression = msg.remove("+math")
+       val1=msg[0]
+       opr=msg[1]
+       val2=msg[2]
+       if opr == "+":
+           sum = float(val1)+float(val2)
+           await message.channel.send(sum)
+       elif opr =="-":
+           dif = float(val1)-float(val2)
+           await message.channel.send(dif)
+       elif opr =="*":
+           multiply = float(val1)*float(val2)
+           await message.channel.send(multiply)
+       elif opr =="/":
+           divide = float(val1)/float(val2)
+   if message.content.startswith("+absolutevalue"):
+       msg = message.content.split()
+       var = msg[1]
+       if "-" in var:
+        abs = int(var)*-1
+       else:
+        abs = int(var)*1
+       await message.channel.send(abs)
+   if message.content.startswith("+absvalue"):
+       msg = message.content.split()
+       var = msg[1]
+       if "-" in var:
+        abs = int(var)*-1
+       else:
+        abs = int(var)*1
+       await message.channel.send(abs)
+   #if message.content == "serversize": EVENTUALLY GONNA DO THIS
+  # ppl = message.content.split()
+   #total = ppl[1]
+   #await message.channel.send(There are ___ users in your server)
+   if message.content == "+shutdown":
+       if user.id == 569170456985206804:
+        await message.channel.send("```\n Now shutting down\n ```")
+        await client.close()
+       else:
+         await message.channel.send("YOU DO NOT HAVE ENOUGH PRIVILEGES TO SHUTDOWN THIS BOT")
+   if message.content.startswith("+avatar"):
+       if (message.mentions.__len__()>0):
+        for user in message.mentions:
+         await message.channel.send(user.avatar_url)
+         if message != +avatar + user.avatar_url:
+          await message.channel.send("Sorry please put '+avatar' and then ping the person's id to see their avatar")
+  
+
+
+
+client.run('')
+
+
