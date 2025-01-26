@@ -11,7 +11,7 @@ async def on_ready():
    print(client.user.name)
    print(client.user.id)
    print("yoyostring's ID for discord")
-   await client.change_presence(activity=discord.Game(name="+help from best waifu"))
+   await client.change_presence(activity=discord.Game(name="+help"))
 
 @client.event
 async def on_message(message):
@@ -19,24 +19,12 @@ async def on_message(message):
        return
    if message.content == "+smiley":
        await message.channel.send(":D")
-   if message.content == "+peepeesize":
-       foo = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "c==8"]
-       await message.channel.send(random.choice(foo))
-   if message.content == "+ppsize":
-       foo = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "c==8"]
-       await message.channel.send(random.choice(foo))
-   if message.content == "+pp":
-       foo = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "c==8"]
-       await message.channel.send(random.choice(foo))
-   if message.content == "+peepee":
-       foo = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "c==8"]
-       await message.channel.send(random.choice(foo))
    if message.content == "+devinfo":
-       await message.channel.send("Hi this bot is created by yoyostring. This is just for fun and eventually more and more commands will be brought such as math, random chance, maybe even currency. This is because yoyo's waifus are godlike")
+       await message.channel.send("Hi this bot is created by yoyostring. This is just for fun and eventually more and more commands will be brought such as math, random chance, maybe even currency. ")
    if message.content == "+developerinfo":
-       await message.channel.send("Hi this bot is created by yoyostring. This is just for fun and eventually more and more commands will be brought such as math, random chance, maybe even currency. This is because yoyo's waifus are godlike")
+       await message.channel.send("Hi this bot is created by yoyostring. This is just for fun and eventually more and more commands will be brought such as math, random chance, maybe even currency. ")
    if message.content == "+bestjokeever":
-       await message.channel.send("Always your mom")
+       await message.channel.send("joke")
    if message.content == "+help":
        await message.channel.send("This bot is created by yoyostring, "
 "below are the categories of commands you can run. \n"
